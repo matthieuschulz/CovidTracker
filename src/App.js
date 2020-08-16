@@ -4,9 +4,16 @@ import './App.css';
 function App() {
   return (
     <div className="app">
-        <h1>Covid 19 Tracker</h1>
+        <h1>COVID 19 TRACKER</h1>
+
+        <FormControl className="app__dropdwn">
+
+
+        </FormControl>
+
         {/* Header */}
         {/* Title + Select input dropdown field */}
+
         {/* InfoBox */}
         {/* InfoBox */}
         {/* InfoBox */}
