@@ -8,6 +8,7 @@ import {
 
 function App() {
   const [countries, setCountries] = useState([]);
+  const [country, setCountry] = useState('worldwide');
 
   //STATE = How to declare a variable in REACT
   //USEEFFECT = Runs a piece of code based on a given condition
@@ -31,34 +32,25 @@ function App() {
    getCountriesData();
   }, []);
 
+  const onCountryChange = async (event) => {
+    const countryCode = event.target.value;
+
+    setCountry(countryCode);
+  }
+
   return (
     <div className="app">
       <div className="app__header">
           <h1>COVID 19 TRACKER</h1>
 
         <FormControl className="app__dropdown">
-          <Select
-            variant="outlined"
-            value="abc"
+          <Select variant="outlined" onChange={onCountryChange} value={country}>
+          <MenuItem value="worldwide">WorldWide</MenuItem>
 
-          >
-            {
-              countries.map(country => (
-                <MenuItem value={country}>{country}</MenuItem>
-              ))
-            }
-            {/* Loop through all countries and show a drop down list of the options*/}
-            
-            <MenuItem value="worldwide">WorldWide</MenuItem>
-            <MenuItem value="worldwide">Wddd</MenuItem>
-            <MenuItem value="worldwide">Wd,dd,d,d,de</MenuItem>
-            <MenuItem value="worldwide">yoooo</MenuItem>
-            <MenuItem value="worldwide">WorldWide1234343</MenuItem>
-          
+            {countries.map(country => (
+                <MenuItem value={country.value}>{country.name}</MenuItem>
+              ))}
           </Select>
-
-          
-
         </FormControl>
       </div>
         
