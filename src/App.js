@@ -7,6 +7,7 @@ import Map from './Map';
 function App() {
   const [countries, setCountries] = useState([]);
   const [country, setCountry] = useState('worldwide');
+  const [country,  setCountryInfo] = useState({});
 
   //STATE = How to declare a variable in REACT
   //USEEFFECT = Runs a piece of code based on a given condition
@@ -32,6 +33,21 @@ function App() {
 
   const onCountryChange = async (event) => {
     const countryCode = event.target.value;
+    // 2 Conditions Worldwide vs countries
+    //https://disease;sh/v3/covid-19/all
+    //https://diseases.sh/v3/covid-19/countries/[COUNTRY_CODE]
+
+    const url = countryCode === "worldwide"
+     ?  `https://disease;sh/v3/covid-19/all`
+     : `https://diseases.sh/v3/covid-19/countries/${countryCode}`;
+
+     await fetch(url)
+     .then(response => response.json())
+     .then(data =>{
+       setCountry(countryCode);
+       setCouuntryInfo(data);
+     })
+
 
     setCountry(countryCode);
   }

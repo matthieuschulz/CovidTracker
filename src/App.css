@@ -8,6 +8,7 @@
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
+
 }
 
 .app__header{
@@ -18,11 +19,21 @@
   
 }
 
+.app__left{
+  flex: 0.9; /* Takes 90% of space*/
+}
+
 .app__stats{
   display: flex;
   justify-content: space-between;
 }
 
 body{
-  background-color: #f5f6fa;
+  background-color: #f5f6fa; /* gives a bit more volume to beauty of code*/
+}
+
+@media (max-width: 990px){
+  .app{
+    flex-direction: column;
+  }
 }
