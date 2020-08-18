@@ -17,7 +17,7 @@ function App() {
   useEffect(() => {
    
 
-    
+
 
    const getCountriesData = async() => {
      await fetch("https://disease.sh/v3/covid-19/countries")
@@ -57,6 +57,12 @@ function App() {
         </FormControl>
       </div>
         
+
+      <div className = "app__stats">
+        {/* InfoBox title: Corona cases */}
+        {/* InfoBox title: Corona recoveries */}
+        {/* InfoBox title: Corona deaths*/}
+      </div>
 
         {/* Header */}
         {/* Title + Select input dropdown field */}
