@@ -44,8 +44,8 @@ function App() {
      await fetch(url)
      .then(response => response.json())
      .then(data =>{
-       setCountry(countryCode);
-       setCouuntryInfo(data);
+       setCountry(countryCode); // updates input field
+       setCouuntryInfo(data); // stores response
      })
 
 
