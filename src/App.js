@@ -1,10 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import {
-  MenuItem,
-  FormControl,
-  Select,
-} from "@material-ui/core"
+import {MenuItem,FormControl,Select, Card, CardContent} from "@material-ui/core";
+import InfoBox from './InfoBox';
+import Map from './Map';
 
 function App() {
   const [countries, setCountries] = useState([]);
@@ -16,9 +14,6 @@ function App() {
 
   useEffect(() => {
    
-
-
-
    const getCountriesData = async() => {
      await fetch("https://disease.sh/v3/covid-19/countries")
      .then((response) => response.json())
@@ -43,9 +38,11 @@ function App() {
 
   return (
     <div className="app">
+      <div className="app__left">
       <div className="app__header">
+           {/* Header */}
           <h1>COVID 19 TRACKER</h1>
-
+          {/* Title + Select input dropdown field */}
         <FormControl className="app__dropdown">
           <Select variant="outlined" onChange={onCountryChange} value={country}>
           <MenuItem value="worldwide">WorldWide</MenuItem>
@@ -59,31 +56,33 @@ function App() {
         
 
       <div className = "app__stats">
+         <InfoBox title="Covid 19 Cases" cases={123} total={2000}/>
+
+         <InfoBox title="Recovered" cases={123} total={2000}/>
+
+         <InfoBox title="Deaths"cases={122} total={2000}/>
         {/* InfoBox title: Corona cases */}
         {/* InfoBox title: Corona recoveries */}
         {/* InfoBox title: Corona deaths*/}
       </div>
 
-        {/* Header */}
-        {/* Title + Select input dropdown field */}
-
-        {/* InfoBox */}
-        {/* InfoBox */}
-        {/* InfoBox */}
-
-        {/* Table */}
-        {/* Graph */}
-
         {/* Map */}
+        <Map/>
+      </div>
+
+      <Card className="app__right">
+        <CardContent>
+          <h3>Life Cases by Country</h3>
+          {/* Table */}
+        <h3> WorldWide new  cases</h3>
+        </CardContent>
         
-
-
+        {/* Graph */}
+      </Card>
+      
     </div>
     
   );
 }
-
-
-
 
 export default App;
