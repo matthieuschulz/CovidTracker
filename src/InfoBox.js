@@ -15,6 +15,7 @@ function InfoBox({title, cases, total}) {
              
 
 
+
              {/* +12Ok Number of Cases*/}
              <h2 className="infoBox__cases">{cases}</h2>  
              {/* 1.2M Total*/}
