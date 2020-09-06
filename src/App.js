@@ -15,6 +15,7 @@ function App() {
 
 
 
+  
   useEffect(() => {
    
    const getCountriesData = async() => {
@@ -26,7 +27,7 @@ function App() {
               value: country.countryInfo.iso2 //UK, USA, FR
             }));
           setCountries(countries);
-          
+
             
 
      });
