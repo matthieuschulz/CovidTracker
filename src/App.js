@@ -13,7 +13,7 @@ function App() {
   //USEEFFECT = Runs a piece of code based on a given condition
   //async -> sned a request, wait for it, do something with info
 
-  
+
 
   useEffect(() => {
    
@@ -26,6 +26,7 @@ function App() {
               value: country.countryInfo.iso2 //UK, USA, FR
             }));
           setCountries(countries);
+          
             
 
      });
