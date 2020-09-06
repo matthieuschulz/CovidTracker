@@ -12,6 +12,7 @@ function App() {
   //STATE = How to declare a variable in REACT
   //USEEFFECT = Runs a piece of code based on a given condition
   //async -> sned a request, wait for it, do something with info
+
   
 
   useEffect(() => {
